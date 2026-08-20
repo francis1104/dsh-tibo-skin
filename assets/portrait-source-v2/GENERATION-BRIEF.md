@@ -4,10 +4,10 @@
 
 * 阶段参考图：**4 张**
 * 计划关键图：**24 张**
-* 已生成：**0 / 24**
+* 已生成：**10 / 24**
 * 分辨率与色彩：**1024 × 1024，RGB**
-* 生成图目录：`packages/dsh-client-liang-intensity-skin/assets/portrait-source-v3/`
-* 阶段参考图目录：`packages/dsh-client-liang-intensity-skin/assets/portrait-source-v3/references/`
+* 生成图目录：`assets/portrait-source-v2/`
+* 阶段参考图目录：`assets/portrait-source-v2/references/`
 
 本版方案改为：**用 4 张阶段锚点参考图，生成 24 张连续渐变的人像关键图**。
 4 张参考图只作为**锚点输入**，24 张输出图才是最终用于前端滑动渐变序列的生产资产。
@@ -101,17 +101,17 @@ No close-up crop. No cropped head, shoulders, arms or torso. No side pose. No ex
 | 顺序 | 强度 | 区间       | 状态  | 规范输出文件          | 下锚点参考                            | 上锚点参考                            | 渐变要求                    | 连续性参考                                  |
 | -: | -: | -------- | --- | --------------- | -------------------------------- | -------------------------------- | ----------------------- | -------------------------------------- |
 |  1 | 00 | A（00→12） | 待生成 | `stage-00.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 精确贴近 00 锚点              | 下一张 `level-01.png`                     |
-|  2 | 01 | A（00→12） | 待生成 | `level-01.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 非常接近 00，开始轻微向 12 过渡     | 前一张 `stage-00.png`；下一张 `level-03.png`  |
-|  3 | 03 | A（00→12） | 待生成 | `level-03.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 仍偏 00，但过渡感比 01 更明显      | 前一张 `level-01.png`；下一张 `level-04.png`  |
-|  4 | 04 | A（00→12） | 待生成 | `level-04.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 处于 00→12 的早段中间态         | 前一张 `level-03.png`；下一张 `stage-06.png`  |
-|  5 | 06 | A（00→12） | 待生成 | `stage-06.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 处于区间中段，前后特征应均衡          | 前一张 `level-04.png`；下一张 `level-07.png`  |
-|  6 | 07 | A（00→12） | 待生成 | `level-07.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 略偏向 12，但仍明显属于中间态        | 前一张 `stage-06.png`；下一张 `level-09.png`  |
-|  7 | 09 | A（00→12） | 待生成 | `level-09.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 明显接近 12，但不能直接跳到 12      | 前一张 `level-07.png`；下一张 `level-10.png`  |
-|  8 | 10 | A（00→12） | 待生成 | `level-10.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 高度接近 12，仅保留少量中间过渡感      | 前一张 `level-09.png`；下一张 `stage-12.png`  |
+|  2 | 01 | A（00→12） | 已生成 | `level-01.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 非常接近 00，开始轻微向 12 过渡     | 前一张 `stage-00.png`；下一张 `level-03.png`  |
+|  3 | 03 | A（00→12） | 已生成 | `level-03.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 仍偏 00，但过渡感比 01 更明显      | 前一张 `level-01.png`；下一张 `level-04.png`  |
+|  4 | 04 | A（00→12） | 已生成 | `level-04.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 处于 00→12 的早段中间态         | 前一张 `level-03.png`；下一张 `stage-06.png`  |
+|  5 | 06 | A（00→12） | 已生成 | `stage-06.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 处于区间中段，前后特征应均衡          | 前一张 `level-04.png`；下一张 `level-07.png`  |
+|  6 | 07 | A（00→12） | 已生成 | `level-07.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 略偏向 12，但仍明显属于中间态        | 前一张 `stage-06.png`；下一张 `level-09.png`  |
+|  7 | 09 | A（00→12） | 已生成 | `level-09.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 明显接近 12，但不能直接跳到 12      | 前一张 `level-07.png`；下一张 `level-10.png`  |
+|  8 | 10 | A（00→12） | 已生成 | `level-10.png`  | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 高度接近 12，仅保留少量中间过渡感      | 前一张 `level-09.png`；下一张 `stage-12.png`  |
 |  9 | 12 | A/B 锚点   | 待生成 | `stage-12.png`  | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 精确贴近 12 锚点              | 前一张 `level-10.png`；下一张 `level-13.png`  |
-| 10 | 13 | B（12→24） | 待生成 | `level-13.png`  | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 非常接近 12，开始向 24 过渡       | 前一张 `stage-12.png`；下一张 `level-14.png`  |
-| 11 | 14 | B（12→24） | 待生成 | `level-14.png`  | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 早段中间态，比 13 更接近中段        | 前一张 `level-13.png`；下一张 `bridge-15.png` |
-| 12 | 15 | B（12→24） | 待生成 | `bridge-15.png` | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 桥接图，重点保证 14→16 过渡顺滑     | 前一张 `level-14.png`；下一张 `level-16.png`  |
+| 10 | 13 | B（12→24） | 已生成 | `level-13.png`  | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 非常接近 12，开始向 24 过渡       | 前一张 `stage-12.png`；下一张 `level-14.png`  |
+| 11 | 14 | B（12→24） | 已生成 | `level-14.png`  | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 早段中间态，比 13 更接近中段        | 前一张 `level-13.png`；下一张 `bridge-15.png` |
+| 12 | 15 | B（12→24） | 已生成 | `bridge-15.png` | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 桥接图，重点保证 14→16 过渡顺滑     | 前一张 `level-14.png`；下一张 `level-16.png`  |
 | 13 | 16 | B（12→24） | 待生成 | `level-16.png`  | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 区间中段，中间态必须自然稳定          | 前一张 `bridge-15.png`；下一张 `level-17.png` |
 | 14 | 17 | B（12→24） | 待生成 | `level-17.png`  | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 略偏向 24，增强渐变感            | 前一张 `level-16.png`；下一张 `stage-18.png`  |
 | 15 | 18 | B（12→24） | 待生成 | `stage-18.png`  | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 处于偏后段，应明显比 16/17 更接近 24 | 前一张 `level-17.png`；下一张 `level-19.png`  |
@@ -135,11 +135,11 @@ No close-up crop. No cropped head, shoulders, arms or torso. No side pose. No ex
 
 3. 所有输出图必须放入：
 
-   `packages/dsh-client-liang-intensity-skin/assets/portrait-source-v3/`
+   `assets/portrait-source-v2/`
 
 4. 4 张锚点参考图放入：
 
-   `packages/dsh-client-liang-intensity-skin/assets/portrait-source-v3/references/`
+   `assets/portrait-source-v2/references/`
 
 5. 前端最终只使用这 24 张输出图，不直接使用 4 张参考图作为展示资产。
 
