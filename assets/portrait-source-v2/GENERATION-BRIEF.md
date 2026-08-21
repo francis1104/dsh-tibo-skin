@@ -8,11 +8,11 @@
 
 * 阶段参考图：**4 张**
 * 计划关键图：**24 张**
-* 已生成：**16 / 24**
+* 已生成：**22 / 24**
 * 最终输出规格：**1024 × 1024，RGB，PNG**
 * 生成图目录：`assets/portrait-source-v2/`
 * 阶段参考图目录：`assets/portrait-source-v2/references/`
-* 本次新增的 6 张图片为 **1024 × 1536，RGB，PNG**；已按档位归档，最终交付前仍需按生产规格重新构图/扩图为 1024×1024。
+* 已归档的 12 张新增图片均为 **1024 × 1536，RGB，PNG**；已按档位归档，最终交付前仍需按生产规格重新构图/扩图为 1024×1024。
 
 本版方案使用 **4 张阶段锚点参考图** 定义完整演变轨迹，再生成 **24 张连续渐变的人像关键图**。
 
@@ -255,12 +255,12 @@ Do not crop the halo or RESET token.
 | 16 | 19 | B（12→24） | 已生成 | `level-19.png` | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 更接近 24，但仍保留中间态属性 | 前一张 `stage-18.png`；下一张 `level-21.png` |
 | 17 | 21 | B（12→24） | 已生成 | `level-21.png` | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 高度接近 24，不可跳过 22 直接到 24 | 前一张 `level-19.png`；下一张 `level-22.png` |
 | 18 | 22 | B（12→24） | 已生成 | `level-22.png` | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 极接近 24，只保留少量过渡差异 | 前一张 `level-21.png`；下一张 `stage-24.png` |
-| 19 | 24 | B/C 锚点 | 待生成 | `stage-24.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 精确贴近 24 锚点；完整保留光环、金币和 RESET 道具 | 前一张 `level-22.png`；下一张 `level-25.png` |
-| 20 | 25 | C（24→30） | 待生成 | `level-25.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 非常接近 24，开始向 30 过渡 | 前一张 `stage-24.png`；下一张 `bridge-27.png` |
-| 21 | 27 | C（24→30） | 待生成 | `bridge-27.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 桥接图，重点保证 25→28 过渡顺滑 | 前一张 `level-25.png`；下一张 `level-28.png` |
-| 22 | 28 | C（24→30） | 待生成 | `level-28.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 明显接近 30，但仍保留中间感 | 前一张 `bridge-27.png`；下一张 `level-29.png` |
-| 23 | 29 | C（24→30） | 待生成 | `level-29.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 高度接近 30，不可直接复制 30 | 前一张 `level-28.png`；下一张 `stage-30.png` |
-| 24 | 30 | C（24→30） | 待生成 | `stage-30.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 精确贴近 30 锚点 | 前一张 `level-29.png` |
+| 19 | 24 | B/C 锚点 | 已生成 | `stage-24.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 精确贴近 24 锚点；完整保留光环、金币和 RESET 道具 | 前一张 `level-22.png`；下一张 `level-25.png` |
+| 20 | 25 | C（24→30） | 已生成 | `level-25.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 非常接近 24，开始向 30 过渡 | 前一张 `stage-24.png`；下一张 `bridge-27.png` |
+| 21 | 27 | C（24→30） | 已生成 | `bridge-27.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 桥接图，重点保证 25→28 过渡顺滑 | 前一张 `level-25.png`；下一张 `level-28.png` |
+| 22 | 28 | C（24→30） | 已生成 | `level-28.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 明显接近 30，但仍保留中间感 | 前一张 `bridge-27.png`；下一张 `level-29.png` |
+| 23 | 29 | C（24→30） | 已生成 | `level-29.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 高度接近 30，不可直接复制 30 | 前一张 `level-28.png`；下一张 `stage-30.png` |
+| 24 | 30 | C（24→30） | 已生成 | `stage-30.png` | `references/stage-24-6.400s.png` | `references/stage-30-8.000s.png` | 精确贴近 30 锚点 | 前一张 `level-29.png` |
 
 ---
 
