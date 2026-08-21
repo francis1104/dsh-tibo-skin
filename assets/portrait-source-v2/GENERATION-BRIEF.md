@@ -8,11 +8,11 @@
 
 * 阶段参考图：**4 张**
 * 计划关键图：**24 张**
-* 已生成：**22 / 24**
+* 已生成：**24 / 24**
 * 最终输出规格：**1024 × 1024，RGB，PNG**
 * 生成图目录：`assets/portrait-source-v2/`
 * 阶段参考图目录：`assets/portrait-source-v2/references/`
-* 已归档的 12 张新增图片均已按头部与前序方图位置对齐，裁切为 **1024 × 1024，RGB，PNG**；原始图为 1024 × 1536，裁切可能损失上下方道具，后续如需保留完整构图应重新扩图。
+* 已归档的 14 张新增图片均为 **1024 × 1024，RGB，PNG**；其中前 12 张按头部与前序方图位置对齐后裁切，最后补入的 `stage-00.png` 与 `stage-12.png` 原图已是方图，仅统一缩放。
 
 本版方案使用 **4 张阶段锚点参考图** 定义完整演变轨迹，再生成 **24 张连续渐变的人像关键图**。
 
@@ -237,7 +237,7 @@ Do not crop the halo or RESET token.
 
 | 顺序 | 强度 | 区间 | 状态 | 规范输出文件 | 下锚点参考 | 上锚点参考 | 渐变要求 | 连续性参考 |
 |---:|---:|---|---|---|---|---|---|---|
-| 1 | 00 | A（00→12） | 待生成 | `stage-00.png` | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 精确贴近 00 锚点 | 下一张 `level-01.png` |
+| 1 | 00 | A（00→12） | 已生成 | `stage-00.png` | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 精确贴近 00 锚点 | 下一张 `level-01.png` |
 | 2 | 01 | A（00→12） | 已生成 | `level-01.png` | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 非常接近 00，开始轻微向 12 过渡 | 前一张 `stage-00.png`；下一张 `level-03.png` |
 | 3 | 03 | A（00→12） | 已生成 | `level-03.png` | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 仍偏 00，但过渡感比 01 更明显 | 前一张 `level-01.png`；下一张 `level-04.png` |
 | 4 | 04 | A（00→12） | 已生成 | `level-04.png` | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 处于 00→12 的早段中间态 | 前一张 `level-03.png`；下一张 `stage-06.png` |
@@ -245,7 +245,7 @@ Do not crop the halo or RESET token.
 | 6 | 07 | A（00→12） | 已生成 | `level-07.png` | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 略偏向 12，但仍明显属于中间态 | 前一张 `stage-06.png`；下一张 `level-09.png` |
 | 7 | 09 | A（00→12） | 已生成 | `level-09.png` | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 明显接近 12，但不能直接跳到 12 | 前一张 `level-07.png`；下一张 `level-10.png` |
 | 8 | 10 | A（00→12） | 已生成 | `level-10.png` | `references/stage-00-0.000s.png` | `references/stage-12-3.200s.png` | 高度接近 12，仅保留少量中间过渡感 | 前一张 `level-09.png`；下一张 `stage-12.png` |
-| 9 | 12 | A/B 锚点 | 待生成 | `stage-12.png` | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 精确贴近 12 锚点；不得加入 24 阶段光环、金币或 RESET 道具 | 前一张 `level-10.png`；下一张 `level-13.png` |
+| 9 | 12 | A/B 锚点 | 已生成 | `stage-12.png` | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 精确贴近 12 锚点；不得加入 24 阶段光环、金币或 RESET 道具 | 前一张 `level-10.png`；下一张 `level-13.png` |
 | 10 | 13 | B（12→24） | 已生成 | `level-13.png` | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 非常接近 12，开始向 24 过渡 | 前一张 `stage-12.png`；下一张 `level-14.png` |
 | 11 | 14 | B（12→24） | 已生成 | `level-14.png` | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 早段中间态，比 13 更接近中段 | 前一张 `level-13.png`；下一张 `bridge-15.png` |
 | 12 | 15 | B（12→24） | 已生成 | `bridge-15.png` | `references/stage-12-3.200s.png` | `references/stage-24-6.400s.png` | 桥接图，重点保证 14→16 过渡顺滑 | 前一张 `level-14.png`；下一张 `level-16.png` |
