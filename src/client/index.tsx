@@ -615,7 +615,7 @@ function installLiangAppearanceButton(scope: PreferenceStore, presenter: SkinPre
       customButton.className = LIANG_APPEARANCE_BUTTON;
       customButton.type = "button";
       customButton.dataset.plugin = PACKAGE_ID;
-      customButton.setAttribute("aria-label", "滑动变祖");
+      customButton.setAttribute("aria-label", "Tibo Reset");
 
       const icon = document.createElement("span");
       icon.className = "liang-appearance-choice__icon";
@@ -625,8 +625,8 @@ function installLiangAppearanceButton(scope: PreferenceStore, presenter: SkinPre
       const label = document.createElement("span");
       label.className = "liang-appearance-choice__label";
       label.textContent = document.documentElement.lang.toLowerCase().startsWith("en")
-        ? "Slider"
-        : "滑动变祖";
+        ? "Tibo Reset"
+        : "Tibo Reset";
       customButton.append(icon, label);
       customButton.addEventListener("click", () => {
         if (pending || scope.getSnapshot().enabled) return;
@@ -659,8 +659,8 @@ function installLiangAppearanceButton(scope: PreferenceStore, presenter: SkinPre
       const bindingLabel = document.createElement("span");
       bindingLabel.className = "liang-appearance-binding__label";
       const bindingText = document.documentElement.lang.toLowerCase().startsWith("en")
-        ? "Bind slider to reasoning level"
-        : "滑动变祖绑定思考等级";
+        ? "Bind Tibo Reset to reasoning level"
+        : "Tibo Reset 绑定思考等级";
       bindingLabel.textContent = bindingText;
 
       const bindingDescription = document.createElement("span");
@@ -807,14 +807,14 @@ export function apply(ctx: ClientContext) {
       "appearance.light": "浅色",
       "appearance.dark": "深色",
       "appearance.system": "跟随系统",
-      "appearance.liang": "滑动变祖",
+      "appearance.liang": "Tibo Reset",
     },
     en: {
       "appearance.title": "Appearance",
       "appearance.light": "Light",
       "appearance.dark": "Dark",
       "appearance.system": "System",
-      "appearance.liang": "Slider",
+      "appearance.liang": "Tibo Reset",
     },
     }), "liang-intensity-skin: settings locale");
 

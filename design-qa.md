@@ -1,4 +1,4 @@
-# 滑动变祖 · Design QA
+# Tibo Reset · Design QA
 
 final result: passed
 
@@ -12,10 +12,10 @@ final result: passed
 
 - Drag/input updates only the continuous local preview
 - Tooltip is mounted only while pointer or keyboard interaction is active
-- Tooltip label combines the continuous Liang rank with the nearest dynamic model effort, for example `梁祖 · Max`
+- Tooltip label combines the continuous Tibo rank with the nearest dynamic model effort, for example `Tibo祖 · Max`
 - Release snaps to the nearest effort and performs one model-selection commit
 - Two-, three-, and five-effort models derive their stops from provider metadata
-- UI remains native-light through level 23 and switches to the black/gold theme at level 24 (`梁神`)
+- UI remains native-light through level 23 and switches to the black/gold theme at level 24 (`Tibo神`)
 - Portrait frames switch directly; no crossfade is retained
 
 ## Visual checks

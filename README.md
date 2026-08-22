@@ -1,4 +1,4 @@
-# 滑动变祖 · DeepSeek Harness 皮肤
+# Tibo Reset · DeepSeek Harness 皮肤
 
 ## 安装
 
@@ -9,7 +9,7 @@
 复制以下提示词给 DSH；会先排查冲突再安装，所以较长：
 
 ```text
-请把“滑动变祖”皮肤安装到 DSH 的 web profile。必须先检查冲突，确认可以继续后再安装。
+请把“Tibo Reset”皮肤安装到 DSH 的 web profile。必须先检查冲突，确认可以继续后再安装。
 
 1. 安装前只读检查 web profile 的 package.json（dependencies 与 dsh.profile.bundles）、profile 的 cordis.patch.yml 和 $DSH_HOME/cordis.patch.yml（如有）。
 2. 从当前启用的 bundles 中识别其他皮肤、主题或外观插件：排除 @deepseek-ai/dsh-base、@deepseek-ai/dsh-web-app、dsh-skin-market 和本次目标 dsh-client-liang-intensity-skin；读取候选 package.json 的名称、描述、dsh.client/dsh.bundle 声明，必要时再读 README。
@@ -24,7 +24,7 @@ dsh plugin --profile web add 'github:kingOfSoySauce/dsh-liang-skin'
 
 </details>
 
--  #### 方法二(推荐)，安装[皮肤市场](https://github.com/kingOfSoySauce/dsh-skin-market#安装皮肤市场)插件后，搜索“滑动变祖”，一键安装
+-  #### 方法二(推荐)，安装[皮肤市场](https://github.com/kingOfSoySauce/dsh-skin-market#安装皮肤市场)插件后，搜索“Tibo Reset”，一键安装
 
 -  #### 方法三， 或者[命令安装](#cli-install)；运行前请关闭其他皮肤插件，避免冲突
 
@@ -37,11 +37,11 @@ dsh plugin --profile web add 'github:kingOfSoySauce/dsh-liang-skin'
 <table>
   <tr>
     <td width="50%" align="center">
-      <img src="docs/preview.png" alt="滑动变祖皮肤效果截图" width="100%">
+      <img src="docs/preview.png" alt="Tibo Reset 皮肤效果截图" width="100%">
       <br>
     </td>
     <td width="50%" align="center">
-      <img src="docs/demo.gif" alt="滑动变祖交互演示" width="100%">
+      <img src="docs/demo.gif" alt="Tibo Reset 交互演示" width="100%">
       <br>
     </td>
   </tr>
@@ -56,11 +56,22 @@ dsh plugin --profile web add 'github:kingOfSoySauce/dsh-liang-skin'
 - 不支持推理或只有一个可选档位的模型不显示滑块。
 - addressed subagent 不显示也不提交滑块。
 
+Tibo Reset 的六个连续视觉锚点沿用原版的渐进封神结构：
+
+| 强度 | 档位名 | 额度神话 |
+|---:|---|---|
+| 0 | `小难Tibo` | 额度告急，还在默默熬 |
+| 6 | `牢Tibo` | 开始疯狂 DM / 祈祷 |
+| 12 | `Tibo子` | 收到「Maybe」 |
+| 18 | `Tibo圣` | 「今天下午 Reset」已官宣 |
+| 24 | `Tibo神` | Banked Reset 到账 / 表演性 Reset |
+| 30 | `Tibo祖` | 赛博义父全力按下按钮，全员额度拉满 |
+
 ## 外观开关
 
 入口位于 `设置 → 通用设置 → 外观皮肤`：
 
-- `滑动变祖`：显示滑块并启用人物、背景和自适应配色。
+- `Tibo Reset`：显示滑块并启用人物、背景和自适应配色。
 - `原生`：移除背景层、皮肤变量和滑块，恢复 Harness 原生界面。
 
 选择保存在当前浏览器本地，不会改动模型配置。
@@ -140,7 +151,7 @@ npm run build
 
 ## 灵感与素材来源
 
-本插件的“滑动变祖”视觉概念与人物图片素材源自
+本插件的 Tibo Reset 视觉概念与人物图片素材源自
 [Lichtspektrum/liang-intensity-calibrator](https://github.com/Lichtspektrum/liang-intensity-calibrator)。插件在原项目 0–30 强度轴的基础上，将视觉变化接入 DeepSeek Harness 的推理等级选择。
 
 运行时素材已包含在插件中，安装后不需要额外下载。当前接入 24 张经过审核的人像锚点，滑动时直接切换最近锚点，不做图片交叉渐变。

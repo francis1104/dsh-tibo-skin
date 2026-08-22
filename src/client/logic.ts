@@ -1,7 +1,7 @@
 export const PREVIEW_MAX_FRAME = 240;
 export const MAX_LEVEL = 30;
 
-const LIANG_RANKS = ["小难梁", "牢梁", "梁子", "梁圣", "梁神", "梁祖"] as const;
+const TIBO_RANKS = ["小难Tibo", "牢Tibo", "Tibo子", "Tibo圣", "Tibo神", "Tibo祖"] as const;
 
 export interface EffortLike {
   id: string;
@@ -104,17 +104,17 @@ export function portraitBlendForLevel(level: number, anchors: readonly number[])
   };
 }
 
-export function liangRankForFrame(rawFrame: number): string {
+export function tiboRankForFrame(rawFrame: number): string {
   const level = (clampFrame(rawFrame) / PREVIEW_MAX_FRAME) * MAX_LEVEL;
-  const index = level >= MAX_LEVEL ? LIANG_RANKS.length - 1 : Math.floor(level / 6);
-  return LIANG_RANKS[Math.min(LIANG_RANKS.length - 1, Math.max(0, index))];
+  const index = level >= MAX_LEVEL ? TIBO_RANKS.length - 1 : Math.floor(level / 6);
+  return TIBO_RANKS[Math.min(TIBO_RANKS.length - 1, Math.max(0, index))];
 }
 
 export function indicatorLabel(rawFrame: number, efforts: readonly EffortLike[]): string {
   const effort = efforts[nearestEffortIndex(rawFrame, efforts)];
   return effort === undefined
-    ? liangRankForFrame(rawFrame)
-    : `${liangRankForFrame(rawFrame)} · ${effort.name}`;
+    ? tiboRankForFrame(rawFrame)
+    : `${tiboRankForFrame(rawFrame)} · ${effort.name}`;
 }
 
 function lerp(a: number, b: number, amount: number): number {
@@ -146,7 +146,7 @@ export function paletteForFrame(rawFrame: number): Palette {
     : (level - portraitFrom.at) / (portraitTo.at - portraitFrom.at);
 
   // The UI itself is intentionally binary: levels 0–23 keep the native light
-  // shell; entering the original 梁神/梁祖 region at level 24 switches black/gold.
+  // shell; entering the Tibo神/Tibo祖 region at level 24 switches black/gold.
   const dark = level >= 24;
   const stage = dark ? 5 : 0;
   const ui = dark ? STOPS[5] : STOPS[0];

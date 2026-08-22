@@ -1,4 +1,4 @@
-# 滑动变祖 · 人像生成交接（4 张参考图 → 24 张渐变图）
+# Tibo Reset · 人像生成交接（4 张参考图 → 24 张渐变图）
 
 > 适用分支：`chore/update-portrait-references`
 >

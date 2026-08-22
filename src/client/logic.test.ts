@@ -2,11 +2,11 @@ import { describe, expect, it } from "vitest";
 import {
   frameForEffort,
   indicatorLabel,
-  liangRankForFrame,
   nearestEffortIndex,
   paletteForFrame,
   portraitBlendForLevel,
   selectedEffortIndex,
+  tiboRankForFrame,
 } from "./logic";
 
 const efforts = [
@@ -15,7 +15,7 @@ const efforts = [
   { id: "max", name: "Max" },
 ];
 
-describe("滑动变祖 effort mapping", () => {
+describe("Tibo Reset effort mapping", () => {
   it("spreads dynamic effort metadata across all 241 preview frames", () => {
     expect(frameForEffort(0, 3)).toBe(0);
     expect(frameForEffort(1, 3)).toBe(120);
@@ -55,13 +55,13 @@ describe("滑动变祖 effort mapping", () => {
     expect(portraitBlendForLevel(31, anchors)).toEqual({ lowerIndex: 7, upperIndex: 7, mix: 0 });
   });
 
-  it("labels continuous Liang ranks independently from model efforts", () => {
-    expect(liangRankForFrame(0)).toBe("小难梁");
-    expect(liangRankForFrame(48)).toBe("牢梁");
-    expect(liangRankForFrame(191)).toBe("梁圣");
-    expect(liangRankForFrame(192)).toBe("梁神");
-    expect(liangRankForFrame(240)).toBe("梁祖");
-    expect(indicatorLabel(240, efforts)).toBe("梁祖 · Max");
-    expect(indicatorLabel(119, efforts)).toBe("梁子 · High");
+  it("labels continuous Tibo ranks independently from model efforts", () => {
+    expect(tiboRankForFrame(0)).toBe("小难Tibo");
+    expect(tiboRankForFrame(48)).toBe("牢Tibo");
+    expect(tiboRankForFrame(191)).toBe("Tibo圣");
+    expect(tiboRankForFrame(192)).toBe("Tibo神");
+    expect(tiboRankForFrame(240)).toBe("Tibo祖");
+    expect(indicatorLabel(240, efforts)).toBe("Tibo祖 · Max");
+    expect(indicatorLabel(119, efforts)).toBe("Tibo子 · High");
   });
 });
