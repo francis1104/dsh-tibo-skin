@@ -167,7 +167,7 @@ class SkinPresenter {
 
     this.poster = document.createElement("img");
     this.poster.className = "liang-skin-poster";
-    this.poster.src = `${ASSET_PREFIX}/liang-poster.png`;
+    this.poster.src = `${ASSET_PREFIX}/portrait-source-v2/stage-30.png`;
     this.poster.alt = "";
 
     this.portrait = document.createElement("img");

@@ -16,7 +16,7 @@
 3. 如果发现其他已启用的皮肤插件，列出它们并停在安装前，提醒我先停用；未经我确认不得修改任何 profile 文件，也不得执行安装。
 4. 如果没有冲突，明确说“未检测到其他已启用的皮肤插件”，然后执行：
 
-dsh plugin --profile web add 'github:kingOfSoySauce/dsh-liang-skin'
+dsh plugin --profile web add 'github:francis1104/dsh-tibo-skin'
 
 5. 安装后读取 web profile 的 package.json，确认 dependencies 和 dsh.profile.bundles 中都有 dsh-client-liang-intensity-skin；再检查目标 package.json 的 dsh.client/dsh.bundle 声明和 liang-intensity-skin loader 注册项。任一缺失都要报告安装或注册失败。
 6. 告诉我如何重启 DSH Web。不要替我安装、停用或卸载其他皮肤。
@@ -80,20 +80,20 @@ Tibo Reset 的六个连续视觉锚点沿用原版的渐进封神结构：
 
 ## 命令安装
 
-需要先安装 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)；当前版本已在 `0.1.0-rc.6` 上验证。安装本身可以在 DSH 运行时执行（只改动磁盘配置），重启后生效。三种方式任选其一：
+需要先安装 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)；当前版本已在 `0.1.0-rc.8` 上验证。安装本身可以在 DSH 运行时执行（只改动磁盘配置），重启后生效。三种方式任选其一：
 
 > 安装前请确保已关闭其他皮肤插件，避免冲突。
 
 ### 方式一：从 GitHub 安装最新版（推荐）
 
 ```sh
-dsh plugin --profile web add 'github:kingOfSoySauce/dsh-liang-skin'
+dsh plugin --profile web add 'github:francis1104/dsh-tibo-skin'
 dsh --profile web --dump-config | grep -B1 -A2 liang-intensity
 ```
 
 ### 方式二：从 GitHub Release tarball 安装
 
-从本仓库 [Releases](https://github.com/kingOfSoySauce/dsh-liang-skin/releases) 页面下载 `dsh-client-liang-intensity-skin-0.1.6.tgz`（包内已包含构建好的 `lib/client.js`，安装时不需要执行任何 prepare 脚本），然后：
+从本仓库 [Releases](https://github.com/francis1104/dsh-tibo-skin/releases) 页面下载 `dsh-client-liang-intensity-skin-0.1.6.tgz`（包内已包含构建好的 `lib/client.js`，安装时不需要执行任何 prepare 脚本），然后：
 
 ```sh
 dsh plugin --profile web add ./dsh-client-liang-intensity-skin-0.1.6.tgz
@@ -105,8 +105,8 @@ dsh plugin --profile web add ./dsh-client-liang-intensity-skin-0.1.6.tgz
 ### 方式三：克隆后从本地路径安装（开发迭代）
 
 ```sh
-git clone https://github.com/kingOfSoySauce/dsh-liang-skin.git
-cd dsh-liang-skin
+git clone https://github.com/francis1104/dsh-tibo-skin.git
+cd dsh-tibo-skin
 dsh plugin --profile web add .
 ```
 

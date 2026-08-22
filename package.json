@@ -5,10 +5,10 @@
   "description": "Tibo Reset：an opt-in adaptive reasoning slider skin for DeepSeek Harness",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kingOfSoySauce/dsh-liang-skin.git"
+    "url": "git+https://github.com/francis1104/dsh-tibo-skin.git"
   },
-  "homepage": "https://github.com/kingOfSoySauce/dsh-liang-skin#readme",
-  "bugs": "https://github.com/kingOfSoySauce/dsh-liang-skin/issues",
+  "homepage": "https://github.com/francis1104/dsh-tibo-skin#readme",
+  "bugs": "https://github.com/francis1104/dsh-tibo-skin/issues",
   "type": "module",
   "main": "./src/index.js",
   "exports": {
@@ -17,7 +17,6 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "assets/liang-poster.png",
     "assets/portrait-source-v2/stage-00.png",
     "assets/portrait-source-v2/level-01.png",
     "assets/portrait-source-v2/level-03.png",

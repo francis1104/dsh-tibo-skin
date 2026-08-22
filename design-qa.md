@@ -4,7 +4,7 @@ final result: passed
 
 ## Verified build
 
-- DSH `0.1.0-rc.6`, isolated profile on `127.0.0.1:3081`
+- DSH `0.1.0-rc.8`, isolated profile on `127.0.0.1:3080`
 - Plugin client bundle loads and the dynamic reasoning slider is present
 - 8/8 unit cases pass; production client bundle builds successfully
 
@@ -39,5 +39,5 @@ final result: passed
 ## Asset handoff
 
 - 24/24 portrait sources are present at `assets/portrait-source-v2/`
-- Final contact sheet: `assets/portrait-source-v2/references/contact-sheet-final-24.png`
+- Four stage references: `assets/portrait-source-v2/references/`
 - Portrait generation handoff: `assets/portrait-source-v2/GENERATION-BRIEF.md`
