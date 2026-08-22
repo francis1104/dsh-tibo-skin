@@ -160,6 +160,8 @@ npm run build
 本插件的原始视觉来源是
 [Lichtspektrum/liang-intensity-calibrator](https://github.com/Lichtspektrum/liang-intensity-calibrator)。原项目是一个独立的网页端「梁系强度校准器」：以 `-15` 到 `+15` 的 31 个等级为强度轴，通过连续滑杆和视频帧，让同一人物从低强度状态逐步演变到高强度的「梁祖」状态；项目还包含鼠标、触摸和键盘交互，以及社区投票和时间线功能。
 
+[kingOfSoySauce/dsh-liang-skin](https://github.com/kingOfSoySauce/dsh-liang-skin) 是基于上述上游项目的 DeepSeek Harness 皮肤 fork，也是本项目的直接前身。它将梁系强度滑杆的视觉表达接入 DSH 的模型与思考强度选择。本仓库在此 DSH 适配基础上继续开发 Tibo Reset，保留兼容所需的旧 package 和 loader 标识，同时重新整理了人物素材、档位命名、交互说明和文档。
+
 本插件借鉴原仓库的 31 级视觉强度序列，将其重新映射到插件的 0–30 视觉强度轴，保留六阶段结构和人物渐变思路，再将 24 张审核后的人像锚点接入 DeepSeek Harness 的 reasoning effort 选择，并以 Tibo Reset 重新命名和设计界面。原项目的投票后端、社区平均分和时间线功能不属于本插件。
 
 运行时素材已包含在插件中，安装后不需要额外下载。当前接入 24 张经过审核的人像锚点，滑动时直接切换最近锚点，不做图片交叉渐变。

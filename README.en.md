@@ -157,6 +157,8 @@ This is my first time building a batch portrait-generation workflow of this kind
 
 The original visual source is [Lichtspektrum/liang-intensity-calibrator](https://github.com/Lichtspektrum/liang-intensity-calibrator). It is an independent web-based “Liang intensity calibrator”: a 31-level scale from `-15` to `+15`, a continuous slider, and video frames that evolve the same character from a restrained low-intensity state toward the crowned “Liang Ancestor” state. The upstream project also supports mouse, touch, and keyboard interaction, as well as community voting and a timeline view.
 
+[kingOfSoySauce/dsh-liang-skin](https://github.com/kingOfSoySauce/dsh-liang-skin) is a DeepSeek Harness skin fork based on that upstream project and the direct predecessor to this plugin. It connects the Liang-style intensity slider to DSH model and reasoning-strength selection. This repository continues that DSH adaptation under the Tibo Reset name, retaining the legacy package and loader identifiers needed for compatibility while revising the portrait assets, rank labels, interaction notes, and documentation.
+
 Tibo Reset remaps the upstream project’s 31-level visual intensity sequence onto this plugin’s 0–30 scale, keeps its six-stage structure and portrait-evolution concept, and connects 24 reviewed portrait anchors to DeepSeek Harness reasoning-effort selection under the Tibo Reset name. The upstream voting backend, community averages, and timeline features are not part of this plugin.
 
 All runtime assets are bundled with the plugin; no additional download is required after installation. The client uses 24 reviewed portrait anchors and switches directly to the nearest anchor while dragging; it does not crossfade between images.
