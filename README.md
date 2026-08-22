@@ -1,5 +1,9 @@
 # Tibo Reset · DeepSeek Harness 皮肤
 
+[English version](README.en.md)
+
+> **这个世界需要更多的 Reset。**
+
 ## 安装
 
 - #### 方法一， 提示词安装：
@@ -12,7 +16,7 @@
 请把“Tibo Reset”皮肤安装到 DSH 的 web profile。必须先检查冲突，确认可以继续后再安装。
 
 1. 安装前只读检查 web profile 的 package.json（dependencies 与 dsh.profile.bundles）、profile 的 cordis.patch.yml 和 $DSH_HOME/cordis.patch.yml（如有）。
-2. 从当前启用的 bundles 中识别其他皮肤、主题或外观插件：排除 @deepseek-ai/dsh-base、@deepseek-ai/dsh-web-app、dsh-skin-market 和本次目标 dsh-client-liang-intensity-skin；读取候选 package.json 的名称、描述、dsh.client/dsh.bundle 声明，必要时再读 README。
+2. 从当前启用的 bundles 中识别其他皮肤、主题或外观插件：排除 @deepseek-ai/dsh-base、@deepseek-ai/dsh-web-app 和本次目标 dsh-client-liang-intensity-skin；读取候选 package.json 的名称、描述、dsh.client/dsh.bundle 声明，必要时再读 README。
 3. 如果发现其他已启用的皮肤插件，列出它们并停在安装前，提醒我先停用；未经我确认不得修改任何 profile 文件，也不得执行安装。
 4. 如果没有冲突，明确说“未检测到其他已启用的皮肤插件”，然后执行：
 
@@ -24,13 +28,9 @@ dsh plugin --profile web add 'github:francis1104/dsh-tibo-skin'
 
 </details>
 
--  #### 方法二(推荐)，安装[皮肤市场](https://github.com/kingOfSoySauce/dsh-skin-market#安装皮肤市场)插件后，搜索“Tibo Reset”，一键安装
+-  #### 方法二（推荐），使用[命令安装](#cli-install)；运行前请关闭其他皮肤插件，避免冲突
 
--  #### 方法三， 或者[命令安装](#cli-install)；运行前请关闭其他皮肤插件，避免冲突
-
-## 更多 DSH 皮肤
-
-更多社区皮肤，点击[在线浏览皮肤市场](https://kingofsoysauce.github.io/dsh-skin-market/)
+如果你希望手动安装或进行本地开发，请直接使用下面的命令安装方式。
 
 ## 效果展示
 
@@ -149,9 +149,17 @@ npm run build
 
 修改 client 源码后需要运行 `npm run build`，并一起提交更新后的 `lib/client.js` 和 source map。
 
+## 当前素材说明
+
+当前 24 张图片已经完成并接入插件，滑块和运行时展示均可正常使用。不过，相邻画面之间的连续性仍有少量不一致，人物细节、姿态或阶段元素并不总是完全平滑。
+
+这是作者第一次尝试搭建这种批量人像生图与渐变序列工作流，一致性控制和逐帧修整还在学习和改进中。当前版本优先保证 24 张序列完整、档位切换稳定；后续如有需要，再继续逐张优化过渡效果。
+
 ## 灵感与素材来源
 
-本插件的 Tibo Reset 视觉概念与人物图片素材源自
-[Lichtspektrum/liang-intensity-calibrator](https://github.com/Lichtspektrum/liang-intensity-calibrator)。插件在原项目 0–30 强度轴的基础上，将视觉变化接入 DeepSeek Harness 的推理等级选择。
+本插件的原始视觉来源是
+[Lichtspektrum/liang-intensity-calibrator](https://github.com/Lichtspektrum/liang-intensity-calibrator)。原项目是一个独立的网页端「梁系强度校准器」：以 `-15` 到 `+15` 的 31 个等级为强度轴，通过连续滑杆和视频帧，让同一人物从低强度状态逐步演变到高强度的「梁祖」状态；项目还包含鼠标、触摸和键盘交互，以及社区投票和时间线功能。
+
+本插件借鉴原仓库的 31 级视觉强度序列，将其重新映射到插件的 0–30 视觉强度轴，保留六阶段结构和人物渐变思路，再将 24 张审核后的人像锚点接入 DeepSeek Harness 的 reasoning effort 选择，并以 Tibo Reset 重新命名和设计界面。原项目的投票后端、社区平均分和时间线功能不属于本插件。
 
 运行时素材已包含在插件中，安装后不需要额外下载。当前接入 24 张经过审核的人像锚点，滑动时直接切换最近锚点，不做图片交叉渐变。
